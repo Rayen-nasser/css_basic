@@ -1,0 +1,44 @@
+@mixin arrow($direction){
+    content: "";
+    position: absolute;
+    border: 20px solid transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    $direction: -40px;
+    border-bottom-color: red;
+  }
+
+  @mixin placeholder{
+    &.placeholder,
+    &:-moz-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &::webkit-input-placeholder{
+      @content
+    }
+}
+
+@mixin flex-center($width: 400px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $width;
+  }
+
+@mixin overlay($color, $opacity){
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color, $opacity);
+}
+
+@mixin keyF($anim-name) {
+    @-webkit-keyframes #{$anim-name} {
+      @content;
+    }
+    @keyframes #{$anim-name} {
+      @content;
+    }
+}

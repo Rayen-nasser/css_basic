@@ -1,0 +1,113 @@
+body {
+    background-color: #ddd;
+    overflow:auto;
+    
+}
+
+.page {
+    display: grid;
+    grid-template-columns: repeat(4,1fr) ;
+    grid-template-rows: repeat(3,1fr) auto;
+    grid-template-areas: "OsamaMohamed OsamaMohamed AhmedSayed ShadyNabil"
+    "MohamedIbrahim MahmoudMohamed MahmoudMohamed ShadyNabil"
+    "MohamedIbrahim EzzEldin EzzEldin ShadyNabil"
+    "MohamedSayed IbrahimSayed GamalSayed EmanSayed";
+    gap: 8px 8px;
+    margin: 10px auto;
+    
+}
+.page div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+    --padding: 10px;
+    --border-bottom: 4px solid orangered;
+
+}
+
+.OsamaMohamed {
+    grid-area: OsamaMohamed;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: white;
+    color: black;
+}
+
+.AhmedSayed {
+    grid-area: AhmedSayed;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: white;
+    color: black;
+}
+
+.ShadyNabil {
+    grid-area: ShadyNabil;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: black;
+    color: white;
+}
+
+.MohamedIbrahim {
+    grid-area: MohamedIbrahim;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: white;
+    color: black;
+}
+
+.MahmoudMohamed {
+    grid-area: MahmoudMohamed;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: black;
+    color: white;
+}
+
+.EzzEldin {
+    grid-area: EzzEldin;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: white ;
+    color: black; }
+
+.MohamedSayed {
+    grid-area: MohamedSayed;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: white ;
+    color: black;
+}
+
+.IbrahimSayed {
+    grid-area: IbrahimSayed;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: black;
+    color: white;
+}
+
+.GamalSayed {
+    grid-area: GamalSayed;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: black;
+    color: white; }
+
+.EmanSayed {
+    grid-area: EmanSayed;
+    padding: var(--padding);
+    border-bottom: var(--border-bottom);
+    background-color: black;
+    color: white; }

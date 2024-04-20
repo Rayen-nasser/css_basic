@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .div-1{
+        width: 50px;
+        height: 50px;
+        border: rgb(255, 67, 98) solid 8px;
+        border-left: transparent solid 8px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 40px auto;
+        animation-name: turn;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function:linear;
+     }
+
+     .div-1::after{
+        content:"" ;
+        width: 75px;
+        height: 75px;
+        border: rgb(45, 136, 233) solid 8px;
+        border-right: transparent solid 8px;
+        border-radius: 50%;
+        position: absolute;
+        animation-name: turn;
+        animation-duration: 1s;
+     } 
+
+     .div-1::before{
+        content:"" ;
+        width: 100px;
+        height: 100px;
+        border: rgb(222, 217, 57) solid 8px;
+        border-top: transparent solid 8px;
+        border-radius: 50%;
+        position: absolute;
+        animation-name: turn;
+        animation-duration: 1s;
+     } 
+
+     @keyframes turn {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+     }
+
+     .div-1:hover{
+        animation-play-state: paused;
+     }
+
+     .div-2{
+        width: 50px;
+        height: 50px;
+        border: rgb(67, 127, 255) solid 8px;
+        border-right: transparent solid 8px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 80px auto;
+        animation-name: turn;
+       ;
+     }
+
+     .div-2::after{
+        content:"" ;
+        width: 75px;
+        height: 75px;
+        border: rgb(233, 202, 45) solid 8px;
+        border-right: transparent solid 8px;
+        border-radius: 50%;
+        position: absolute;
+        animation-name: turn;
+       
+     } 
+
+     .div-2::before{
+        content:"" ;
+        width: 100px;
+        height: 100px;
+        border: rgb(0, 0, 0) solid 8px;
+        border-right: transparent solid 8px;
+        border-radius: 50%;
+        position: absolute;
+        animation-name: turn;
+        
+     } 
+
+    .div-2:hover {
+        animation-play-state: running;
+        animation-iteration-count: infinite;
+       animation-timing-function: linear;
+        animation-duration: 1s;
+    }
+
+   .div-2::before
+   {
+    animation-direction: reverse;
+   }
+
+   span {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 100px auto;
+        height: 50px;
+        width: 50px;
+        background-color: #ddd;
+        border-radius: 50%;
+        border: solid 8px black;
+        border-left: transparent solid 8px;
+        animation-name: turn;
+        animation-direction: reverse;
+        animation-duration:1s;
+        animation-iteration-count: infinite;
+        animation-timing-function:linear;
+   }
+
+    </style>
+</head>
+<body>
+    <div class="div-1"></div>
+
+    <div class="div-2"></div> 
+
+    <span></span>
+</body>
+</html>

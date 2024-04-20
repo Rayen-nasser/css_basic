@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            font-size: 20px !important;
+            width: 400px !important;
+            text-align: center;
+            background-color: #eee !important;
+            color: black !important;
+            border: none !important;
+            text-indent: -9999px;
+             line-height: 0;
+        }
+        div::after {
+            content: "Elzero";
+            text-indent: 0;
+            display: block;
+            line-height: initial;
+        }
+    </style>
+</head>
+<body>
+    <div style="
+  background-color: red;
+  color: white;
+  padding: 20px;
+  border: 1px solid blue;
+  font-size: 80px;">
+  Hello Div
+</div>
+</body>
+</html>

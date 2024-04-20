@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+
+        li{
+            background-color: rgb(212, 207, 207);
+            margin: 15px;
+            padding-right: -5px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        li  ul li{
+            
+            background-color: aliceblue;
+            padding: 10px;
+            margin-left: -38px;
+            list-style-type:circle;
+            list-style-position: inside;
+        }
+
+        li ol li{
+            background-color: aliceblue;
+            padding: 10px;
+            margin-left: -15px;
+            margin-top: 5px;
+            list-style-position: outside;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li >
+            HTML
+            <ol start="10" class="lo-1">
+                <li>Slim</li>
+                <li>Pugjs</li>
+                <li>HAML</li>
+            </ol>
+        </li>
+        <li >
+            CSS
+            <ol type="I" class="lo-2">
+                <li>SASS</li>
+                <li>LESS</li>
+                <li>PostCSS</li>
+            </ol>
+        </li>
+        <li >
+            JavaScript
+            <ul  >
+                <li>Vuejs</li>
+                <li>Saveltejs</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

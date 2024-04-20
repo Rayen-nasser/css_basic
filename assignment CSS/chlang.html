@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d1 {
+            width: 250px;
+            height: 50px;
+            background-color: rgb(74, 73, 73);
+            transform: translate(160%, 800%);
+            z-index: -1;
+        }
+
+        .d2 {
+            width: 50px;
+            height: 400px;
+            background-color: rgb(74, 73, 73);
+            transform: translate(800% , 0%);
+            position: relative;
+            z-index: -5;
+        }
+
+        .d1::after {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: ray;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes ray {
+        0% {
+            transform: translate(700%);
+            background-color: yellow;
+        }
+
+        100% {
+            transform: translate(35%);
+            background-color: yellow;
+        }
+    }
+        .d2::after {
+            content: ""; 
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: raye;
+            animation-duration: 1.5s;
+            animation-delay: 1.5s;
+            
+        }
+       
+        @keyframes raye {
+        0% {
+            transform: translatex(35% ) translatey(950%);
+            background-color: yellow;
+        }
+
+        100% {
+            transform: translatex(35% ) translatey(-270%);
+            background-color: yellow;
+        }
+    }   
+
+   
+
+    .d3 {
+        width: 250px;
+        height: 50px;
+        background-color: rgb(74, 73, 73);
+        transform: translate(11%, -96%);
+    }
+
+    .d3::after {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: ray;
+            animation-duration: 1.5s;
+            z-index: -1;
+            animation-delay: 12s;
+        }
+
+        .d3::before {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: back;
+            animation-duration: 1.5s;
+            z-index: -1;
+            animation-delay: 10.5s;
+        }
+
+
+    
+   
+
+    .d4{
+        width: 50px;
+        height: 200px;
+        background-color: rgb(74, 73, 73);
+        transform: translate(55% , -221%);
+        position: relative;
+        z-index: 1;
+    }
+
+    .d4::after {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: rayen;
+            animation-duration: 1.5s;
+            animation-delay: 4.5s;
+        }
+
+        .d4::before {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: rayen2;
+            animation-duration: 0.75s;
+            animation-delay: 15s;
+        }
+
+        @keyframes rayen {
+        0% {
+            transform: translatex(35% ) translatey(0%);
+            background-color: yellow;
+        }
+
+        100% {
+            transform: translatex(35% ) translatey(400%);
+            background-color: yellow;
+        }
+    }     
+        
+    @keyframes rayen2 {
+        0% {
+            transform: translatex(35% ) translatey(400%);
+            background-color: yellow;
+        }
+
+        100% {
+            transform: translatex(35% ) translatey(-200%);
+            background-color: yellow;
+        }
+    } 
+    .d44{
+        width: 50px;
+        height: 205px;
+        background-color: rgb(74, 73, 73);
+        transform: translate(55% , -224%);
+        position: relative;
+        z-index: 1;
+    }
+
+    .d44::after {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: rayen;
+            animation-duration: 1.5s;
+            animation-delay: 9s;
+        }
+
+        .d44::before {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: rayen2;
+            animation-duration: 0.75s;
+            animation-delay: 13.5s;
+        }
+    
+
+    .d5{
+        width: 250px;
+        height: 50px;
+        background-color: rgb(74, 73, 73);
+        transform: translate(11%, -1360%);
+        z-index: 1;
+    }
+
+    .d5::after {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: back;
+            animation-duration: 1.5s;
+            animation-delay: 6s;
+        }
+
+        .d5::before {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: ray;
+            animation-duration: 1.5s;
+            animation-delay: 7.5s;
+        }
+
+
+    .d6{
+        width: 250px;
+        height: 50px;
+        background-color: rgb(74, 73, 73);
+        transform: translate(11%, -1796%);
+        z-index: 1;
+    }
+
+    .d6::after {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name: ray;
+            animation-duration: 1.5s;
+            animation-delay: 3s;
+        }
+
+        .d6::before {
+            content: "";
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 20%;
+            animation-name:back;
+            animation-duration: 1.5s;
+            animation-delay: 17s;
+        }
+
+       
+    
+    @keyframes back {
+        0% {
+            transform: translate(35%);
+            background-color: yellow;
+        }
+
+        100% {
+            transform: translate(700%);
+            background-color: yellow;
+        }
+    }
+
+</style>
+</head>
+<body>
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <div class="d4"></div>
+    <div class="d44"></div>
+    <div class="d5"></div>
+    <div class="d6"></div>
+</body>
+</html>

@@ -1,0 +1,516 @@
+// Import global rules
+@use './scss/layout/global-rules';
+// Import contact page
+@use'./scss/pages/contact_page' ;
+// Import functions
+@use "./Project_Folder/Helpers/functions" as *;
+// Import Mixins 
+@use "./Project_Folder/Helpers/mixins" as *;
+
+$bgcolor: lightblue;
+$textcolor: darkblue;
+$fontsize: 18px;
+
+/* Use the variables */
+body {
+  background-color: $bgcolor;
+  color: $textcolor;
+  font-size: $fontsize;
+}
+
+.contact{
+  $fontsize: 20px;
+  background-color: contact_page.$seconder_bg;
+  font-size: $fontsize;
+}
+
+.sad-bar{
+  font-size: $fontsize;
+}
+
+$sizeMobiel : "max-width : 767px";
+
+@media ($sizeMobiel) {
+  .sad-bar{
+    font-size: 15px;
+  }
+}
+///  Nesting, Variables [ 10 Assignments ]   ///
+//    Assignment ---1--- //       
+.content {
+    > {.box{
+      padding: 15px;
+      > .title{
+        font-size: 18px;
+      }
+    }
+    .cat{
+      padding: 15px;
+    }
+  }
+  &.premium{
+    &::before{
+      content: "Premium Box";
+    }
+    &:hover{
+      background-color: #eee;
+    }
+  }
+}
+
+//    Assignment ---2--- //  
+///// Premier Write
+.class >{
+  .child{
+    padding: 10px;
+  }
+}
+///// Second Write
+.class {
+  > .child{
+    padding: 10px;
+  }
+}
+///// Thrid Write
+.class {
+  > {
+    .child{
+      padding: 10px;
+    }
+  }
+}
+
+//    Assignment ---3--- //  
+$fontsize : 20px;
+$fontweight : bold;
+.class {
+  font: {
+    size: $fontsize;
+    weight:$fontweight;
+  }
+}
+
+//    Assignment ---4--- // 
+.parent {
+  // select the first .sibling that placed immediatly after .parent
+  & + .sibling {
+    margin: auto {
+      top: 10px;
+    }
+    // select every .last preceded by .sibling
+    & ~ .last {
+      padding: 10px;
+    }
+  }
+} 
+
+//    Assignment ---5--- // 
+.widget {
+  background-color: white;
+  padding: 20px;
+}
+.main-border {
+  border: 1px solid #CCC
+}
+.my-class {
+  font-weight: bold;
+  margin: 20px auto;
+}
+.widget{
+  @extend .widget;
+}
+.my-class{
+  @extend .widget;
+}
+.main-border {
+  @extend .main-border;
+}
+.my-class{
+  @extend .main-border;
+}
+//    Assignment ---6--- // 
+// The Code
+.widget {
+  background-color: white;
+  padding: 20px;
+}
+.main-border {
+  border: 1px solid #CCC
+}
+.my-class {
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+// Needed Output
+.my-class {
+  @extend .widget;
+}
+.my-class {
+  @extend .main-border;
+}
+.my-class {
+  @extend .main-border;
+}
+
+//    Assignment ---7--- // 
+%class1 {
+  background-color: white;
+  padding: 20px;
+}
+%class2 {
+  border: 1px solid #CCC
+}
+%class3 {
+  font-weight: bold;
+  margin: 20px auto;
+}
+.widget,.my-class{
+  @extend %class1;
+}
+.main-border,.my-class {
+  @extend %class2;
+}
+.my-class{
+  @extend %class3;
+}
+
+//    Assignment ---8--- // 
+.box{
+  h2,p{
+    font-size: 20px;
+  }
+}
+@media (max-width :575px) {
+  .box{
+    h2,p{
+      font-size: 16px;
+      span{
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//    Assignment ---9--- // 
+
+// The Code
+// Do Not Edit Here
+$red: #e91e63;
+$green: #009688;
+
+// Add What You Want Here
+$link-color: #06789e;
+$link-hover:  #2f069e;
+// Do Not Edit Here
+.box a {
+  color: $link-color;
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+// Needed Output
+.box a {
+  color: $green;
+}
+.box a:hover {
+  color: $red;
+}
+//    Assignment ---9--- // 
+// @use'./Project_Folder/Helpers/finctions';
+// @use'./Project_Folder/Helpers/vars';
+// @use'./Project_Folder/Layout/header';
+// @use'./Project_Folder/Layout/footer';
+//    Assignment ---10--- // 
+.box {
+  font-size: 20px;
+  &-holder{
+    width: 1000px;
+    &-content{
+      margin: auto;
+    }
+  }
+}
+
+
+/// Control Flow, Interpolation [ 5 Assignments ] ///
+// Practice On If And Else If And Else
+
+$direction: "top";
+
+.Box {
+  border: 1px solid #eee;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 50px auto;
+  &::before {
+    content: "";
+    position: absolute;
+    border: 20px solid transparent;
+    @if $direction == "top" {
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-color: red;
+    } @else if $direction == "right" {
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left-color: red;
+    } @else if $direction == "bottom" {
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: red;
+    } @else if $direction == "left" {
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-right-color: red;
+    } @else {
+      @error "This Direction #{$direction} Is Not Valid";
+    }
+  }
+}
+
+//    Assignment ---1--- // 
+
+$main: "school";
+$child: "box";
+$language: "ar"; // English
+$gap: 20px;
+
+@if ($language == "ar"){
+  .#{$main}{
+    padding: calc(#{$gap} - 10px);
+    direction: $language;
+    margin-left: $gap;
+    & .#{$main}-box{
+      padding: calc(#{$gap} - 10px);
+    }
+    &:hover .#{$main}-box{
+      background-color: #eee;
+    }
+  }
+}@else {
+  .#{$main}{
+    padding: calc(#{$gap} - 10px);
+    direction: $language;
+    margin-left: $gap;
+    & .#{$main}-box{
+      padding: calc(#{$gap} - 10px);
+    }
+    &:hover .#{$main}-box{
+      background-color: #eee;
+    }
+  }
+}
+
+//    Assignment ---2--- // 
+// SASS Code
+$main-color: red;
+$alt-color: blue;
+
+/* Theme Version: 1.0 */
+/* Website Theme Main Color Is:#{$main-color} */
+/* Website Theme Main Color Is:#{$alt-color} */
+
+//    Assignment ---3--- //
+// SASS Code
+$number: 7;
+
+
+.class{
+  @if($number > 8){
+    color: blue;
+  }@else if($number > 5){
+    color: green;
+  }@else {
+    color: red;
+  }
+}
+
+//    Assignment ---4--- //
+// SASS Code
+$number: 10;
+$color: red;
+$theme: light;
+
+// Write If Condition Code Here
+
+// Output
+@if($number >5 && $color == red $theme != dark){
+  .class {
+    color: red;
+  }
+}
+
+//    Assignment ---5--- //
+// SASS Code
+$number: 0;
+
+// Output
+.box {
+  @if($number == 10){
+    background-color: #EEE;
+    text-align: center;
+  } 
+  @if($number == 9){
+    background-color: #EEE;
+  }
+}
+
+///  Mixin, Loop [ 7 Assignments ]   ///
+//    Assignment ---1--- //
+
+.element {
+  &:before {
+    @include arrow("top");
+  }
+}
+.element {
+  &:before {
+    @include arrow("bottom");
+  }
+}
+.element {
+  &:before {
+    @include arrow("right");
+  }
+}
+.element {
+  &:before {
+    @include arrow("left");
+  }
+}
+
+//    Assignment ---2--- //
+
+$sizeWidth: 6.25%;
+@for $i from 1 through 16 {
+  .col-#{$i} {
+    width: #{$sizeWidth + 0 };
+  }
+  $sizeWidth : $sizeWidth + 6.25;
+}
+
+//    Assignment ---3--- //
+
+$names:
+  "books" 20px red 18,
+  "games" 30px green 18,
+  "dvds" 20px blue;
+
+@each $class, $padding , $color , $size in $names{
+  .#{$class}{
+    padding: $padding;
+    @if($size != null){
+      font-size: #{$size}px;
+    }@else{
+      font-size: 16px;
+    }
+    border-bottom: 2px solid $color;
+    color: #444;
+  }
+}
+
+//    Assignment ---4--- //
+
+$init: 1;
+
+@while $init <= 5 {
+  .circle-#{$init * 100}{
+    width: $init * 100px;
+    height: $init * 100px;
+    border-radius: ($init * 100px) / 2;
+  }
+  $init: $init + 1 ;
+}
+
+//    Assignment ---5--- //
+
+@for $i from 1 to 6 {
+  .circle-#{$i * 100}{
+    width: $i * 100px;
+    height: $i * 100px;
+    border-radius: ($i * 100px) / 2;
+  }
+}
+
+//    Assignment ---6--- //
+
+// Using
+textarea {
+  @include placeholder {
+    color: #777;
+  }
+}
+
+//    Assignment ---6--- //
+
+// Usage
+.box-one {
+  @include flex-center(500px);
+}
+
+.box-two {
+  @include flex-center;
+}
+
+
+// function
+
+$width: 200px;
+
+.element{
+  width: $width;
+  height: half($width);
+  top: calculate(100px,200px,350px);
+}
+
+// Practice Mixin With Content
+
+.balck-overlay {
+  @include overlay(black,0.2)
+}
+
+@include keyF(fade-in){
+  from{
+    opacity: 1;
+  }to{
+    opacity: 0;
+  }
+}
+
+@include keyF(go-up){
+  from{
+    top: -50%;
+  }to{
+    top: 0;
+  }
+}
+/// Function [ 2 Assignments ]
+//    Assignment ---1--- //
+$start: 100;
+
+
+@for $i from 1 through 6 {
+  .box-#{$start}{
+    width: $start;
+    height: #{double($start)};
+  }
+  $start : double($start);
+}
+
+//    Assignment ---2--- //
+// SASS Code
+.box {
+  top: get-total(100, 50, 20);
+  right: get-total(100, 50);
+}

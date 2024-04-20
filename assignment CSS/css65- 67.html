@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .P1 {
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(14, 166, 248);
+            margin: 50px auto;
+            padding: 10px;
+            background-color: #ddd;
+            font-size: 60px;
+            position: relative;
+            
+        }
+
+        .P1::after {
+            content: "";
+            background-color: rgb(14, 166, 248);
+            width: 330px;
+            height: 200px;
+            position: absolute;
+            z-index: -6;
+            transform: rotate(-10deg);
+        }
+
+        .P1::before {
+            content: "";
+            background-color: rgb(239, 22, 58);
+            width: 330px;
+            height: 200px;
+            position: absolute;
+            z-index:-55;
+            transform: rotate(10deg);
+        }
+
+        .P2
+        {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: #ddd;
+            font-size: 35px;
+            position: relative;
+            border-radius: 50%;
+            
+        }
+
+        .P2::after
+        {
+            content: "";
+            border-right: white 10px solid;
+            border-radius: 50%;
+            border-left: solid 10px rgb(14, 166, 248) ;
+            border-top: solid 10px rgb(14, 166, 248) ;
+            border-bottom: solid 10px rgb(14, 166, 248) ;
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            transition: 0.5s;
+        }
+
+        .P2::before
+        {
+            content: "";
+            border-left: white 10px solid;
+            border-radius: 50%;
+            border-right: solid 10px rgb(239, 22, 58) ;
+            border-top: solid 10px rgb(239, 22, 58) ;
+            border-bottom: solid 10px rgb(239, 22, 58) ;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transition: 0.5s;
+        }
+
+        .P2:hover::before{
+            transform: rotate(1turn)  scale(1) ;
+            opacity: 0.6;
+        }
+        .P2:hover::after{
+            transform: rotate(1turn) scale(1);
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="P1">Elzero</div>
+    
+    <div class="P2">Elzero</div>
+</body>
+</html>

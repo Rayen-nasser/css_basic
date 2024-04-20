@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        div{
+            background-color: white ;
+            border: black 2px solid;
+            border-radius:50% ;
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+            margin: 30px 20px auto;
+            box-shadow: 10px 8px 0px 2px blue, -10px -8px 0px 02px red;
+            
+        }
+        div::before{
+            content: attr(data-person);
+            background-color: white ;
+            border: black 2px solid;
+            background-color: black;
+            color: white;
+            border-radius:50% ;
+            padding: 5px;
+            position: relative;
+            left: 60px;
+            top: -8px;
+            width: 10px;
+            height: 10px;
+            margin: 20px auto;
+        }
+
+        div::after{
+            content: "Element";
+            position: relative;
+            top: 60px;
+            left: 20px;
+            border-radius:100px ;
+            padding: 8px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div data-person="1"></div>
+    <div data-person="2"></div>
+    <div data-person="3"></div> 
+</body>
+</html>

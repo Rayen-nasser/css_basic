@@ -1,0 +1,33 @@
+/// Function To Get Element Height
+///
+/// @param {size}
+/// Element Width
+/// @return {int}
+/// Return Element Height => Width / 2
+
+@function helf($size){
+    @return $size / 2;
+}
+
+@function claclulate($sizes...){
+    $total: 0;
+    @each $size in $sizes{
+        $total : $total + $size ;
+    }
+    @return $total;
+}
+
+$num: 2;
+
+@function double($size) {
+    @return $size * $num;
+  }
+
+
+@function get-total($numbers...){
+    $som: 0;
+    @each $number in $numbers{
+        $som : $som + $number;
+    }
+    @return $som;
+}

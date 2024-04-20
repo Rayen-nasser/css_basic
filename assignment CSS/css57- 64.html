@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            background-color: #ddd;
+            padding: 20px;
+            width: 800px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 10% auto;
+            gap: 20px;
+            counter-reset: numb;
+            
+}
+
+        .grid div {
+            background-color: rgba(238, 238, 238, 0.789);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+
+        .grid div::before
+        {
+            content:"Elment " counter(numb);
+            counter-increment: numb;
+            color: black;
+           
+
+        }
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+        header{ 
+            background-color: darkturquoise; 
+            grid-area: header; 
+        }
+        section{ background-color: orangered;
+                grid-area: section;
+        }
+        aside{ background-color: slategrey;
+                grid-area: aside;
+        }
+        footer{ background-color: teal;  
+            grid-area: footer;}
+    
+
+        .layout{
+            width: 600px;
+            height: 300px;
+            display: grid;
+            grid-template-rows: 10% 1fr 10%;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-areas: 
+            "header header header header header header"
+            "section section section section aside aside"
+            "footer footer footer footer footer footer" ;
+            
+        }
+
+        header::before{
+            content: "header";
+            color: black;
+           
+        }
+        section::before{
+            content: "section";
+            color: black;
+           
+            
+        }
+        aside::before{
+            content: "aside";
+            color: black;
+           
+            
+        }
+        footer::before{
+            content: "footer";
+            color: black;
+           
+            
+        }
+       
+/*-----------------------------------------------------------------------------------------------------------*/
+
+        .gridd {
+            background-color: #ddd;
+            padding: 20px;
+            width: 400px;
+            height: 200px;
+            display: grid;
+            grid-template-rows: 1fr auto ; 
+            grid-template-columns: auto 1fr 1fr auto;
+            gap: 10px;
+            
+
+}
+        .gridd div { 
+            background-color: rgba(165, 42, 42, 0.685);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.gri {
+  background-color: #ddd;
+  padding: 20px;
+  width: 400px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(6,1fr);
+  grid-template-areas:" eight eight eight " 
+  "two two three"
+  "four five five"
+  "six five five"
+  "seven five five"
+  "one one one"
+  ;
+  
+ 
+  gap: 10px 10px;
+}
+.gri div { 
+            background-color: rgba(29, 183, 225, 0.966);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+.eight { grid-area: eight;}
+.two { grid-area: two;}   
+.three{ grid-area: three;} 
+.five {grid-area: five;}
+.one{grid-area: one;}
+.three{ grid-area: three;}
+.six{ grid-area: six;}
+.seven{ grid-area: seven;}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.gr {
+  background-color: #ddd;
+  padding: 20px;
+  width: 400px;
+  height: 200px;
+  display: grid;
+  grid-template-rows: 9% 9%;
+  grid-template-columns:repeat(2, 50% );
+  gap: 0px  5px;
+  align-content: space-between;
+}
+
+.gr div {
+    background-color: rgb(231, 106, 127);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    
+ 
+}
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>  <hr>
+      <div class="layout">
+        <header></header>
+        <section></section>
+        <aside></aside>
+        <footer></footer>
+      </div>
+      <hr>
+      <div class="gridd">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+      </div>
+      <hr>
+      <div class="gri">
+        <div class="one">1</div>
+        <div  class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five" >5</div>
+        <div class="six">6</div>
+        <div class="seven">7</div>
+        <div  class="eight">8</div>
+      </div><hr>
+
+      <div class="gr">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+      </div>
+</body>
+</html>

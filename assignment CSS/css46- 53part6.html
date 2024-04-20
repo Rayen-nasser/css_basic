@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .page {
+            background-color: gainsboro;
+            overflow: hidden;
+        
+        }
+        :root{
+    --background-color: #ccc;
+    --margin: 10px;
+    --padding: 10px;
+}
+        .header {
+            display:flex;
+           justify-content: space-between;
+        
+
+        }
+       .logo, .links {
+            background-color: var(--background-color);
+            height: 30px;
+            padding: var(--padding);
+            margin: var(--margin);
+            width:calc(100% / 6);
+            display: flex;
+            
+            justify-content: center;
+            
+        }
+        .links li{
+    padding-left: 20px;
+}
+      
+        .links{
+    justify-content: flex-end;
+    list-style-type: none;
+}
+        .main-area div{
+    background-color: var(--background-color);
+    margin: var(--margin);
+    padding: var(--padding);
+    height: 400px;
+    width: calc(100% / 5);
+}
+
+       
+        .main-area{
+    display: flex;
+    justify-content: space-between;
+}
+.footer{
+    background-color: var(--background-color);
+    margin: var(--margin);
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+}  
+     
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+          <div class="logo">Logo</div>
+          <ul style="flex-grow: 1;" class="links">
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="main-area">
+          <div class="content" style="flex-grow: 1;">Content</div>
+          <div class="sidebar">Sidebar</div>
+        </div>
+        <div class="footer">
+          <div class="copyright">Copyright 2021</div>
+          <div class="design">Designed By Elzero</div>
+        </div>
+      </div>
+</body>
+</html>
