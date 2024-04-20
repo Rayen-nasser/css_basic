@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    }
+    body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg,#2980b9,#8e44ad);
+    height: 100vh;
+    overflow: hidden;
+    }
+    section nav .log img {
+                width: 100px; 
+                cursor: pointer;
+                margin: 8px 0;
+            }
+    
+            section nav {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                box-shadow: 0 0 10px #089da1;
+                background-color: #fff;
+                position: fixed;
+                left: 0;
+                z-index: 100;
+            }
+    
+            ul{
+                list-style-type: none;
+            }
+    
+            section nav li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+    
+            section nav li a  {
+                text-decoration: none;
+                color: #000;
+            }
+            section nav li a:hover{
+                color: #089da1;
+            }
+           
+            section nav .Social_icon i{
+                margin: 0 5px;
+                font-size: 18px;
+            }
+            section nav .Social_icon i:hover {
+                color: #089da1;
+                cursor: pointer;
+            }
+    
+            table {
+                position: absolute;
+                top:20%;
+            }
+            table tr td{
+                padding: 10px;
+                width: 1500px;
+                text-align: center;
+                text-transform: capitalize;
+                background-color: #eee;
+            }
+    
+            table thead  td{
+                background-color: rgba(22, 19, 19, 0.918);
+                color: aliceblue;
+                text-align: center;
+                text-transform: capitalize;
+            }
+            div{
+                display: inline;
+                margin: 3px;
+                padding: 3px;
+                color: aliceblue;
+            }
+    
+            .view{
+                background-color: rgba(16, 107, 243, 0.986);
+            }
+            .delete{
+                background-color: rgba(233, 12, 49, 0.856);
+            }
